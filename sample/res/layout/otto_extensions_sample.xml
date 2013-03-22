@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="MainThreadBus"
+    android:id="@+id/textView"
+    android:background="@android:color/holo_blue_dark" />
+
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thread to post from:"
+        android:id="@+id/textView3" />
+
+      <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+        android:checkedButton="@+id/mainThreadButton"
+        android:clickable="true"
+        android:id="@+id/threadRadioGroup">
+
+        <RadioButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="main"
+          android:id="@id/mainThreadButton"
+          android:layout_gravity="center|left"
+          android:checked="true"
+          android:clickable="true" />
+
+        <RadioButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="background"
+          android:id="@+id/backgroundThreadButton1"
+          android:layout_gravity="center|left"
+          android:clickable="true" />
+
+      </RadioGroup>
+
+    </LinearLayout>
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Post"
+      android:id="@+id/button1"
+      android:singleLine="false"
+      android:layout_gravity="center_vertical"
+      android:layout_marginLeft="20dp"
+      android:onClick="onMainThreadBusPostClicked" />
+
+  </LinearLayout>
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="ScopedBus"
+    android:id="@+id/textView1"
+    android:background="@android:color/holo_blue_dark"
+    android:layout_marginTop="20dp" />
+
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/linearLayout">
+
+    <ToggleButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="foo"
+      android:id="@+id/activationToggleButton"
+      android:textOn="Deactivate"
+      android:textOff="Activate"
+      android:layout_gravity="center_vertical"
+      android:onClick="onScopedBusActivationToggleClicked" />
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Post"
+      android:id="@+id/button3"
+      android:layout_gravity="top"
+      android:singleLine="false"
+      android:onClick="onScopedBusPostClicked" />
+
+  </LinearLayout>
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="GuaranteedDeliveryBus"
+    android:id="@+id/textView2"
+    android:background="@android:color/holo_blue_dark"
+    android:layout_marginTop="20dp" />
+
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <ToggleButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="foo"
+      android:id="@+id/registrationToggleButton"
+      android:textOff="Register"
+      android:textOn="Unregister"
+      android:layout_gravity="center_vertical"
+      android:onClick="onGuaranteedBusRegistrationToggleClicked" />
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Post"
+      android:id="@+id/button2"
+      android:layout_gravity="top"
+      android:singleLine="false"
+      android:onClick="onGuaranteedBusPostClicked" />
+  </LinearLayout>
+</LinearLayout>

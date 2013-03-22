@@ -1,0 +1,16 @@
+bin
+gen
+build
+out
+lib
+library/tmp
+target
+pom.xml.*
+release.properties
+
+.idea
+classes
+*.iml
+obj
+
+.DS_Store
