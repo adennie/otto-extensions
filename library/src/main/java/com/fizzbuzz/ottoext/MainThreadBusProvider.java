@@ -22,7 +22,7 @@ import com.squareup.otto.ThreadEnforcer;
  * such as through injection directly into interested classes.
  */
 public final class MainThreadBusProvider {
-  private static final MainThreadBus BUS = new MainThreadBus(new Bus(ThreadEnforcer.NONE));
+  private static final MainThreadBus BUS = new MainThreadBus(new Bus(ThreadEnforcer.ANY));
 
   public static MainThreadBus getInstance() {
     return BUS;

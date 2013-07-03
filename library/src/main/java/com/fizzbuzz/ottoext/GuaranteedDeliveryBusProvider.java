@@ -37,7 +37,7 @@ import com.squareup.otto.ThreadEnforcer;
  */
 public final class GuaranteedDeliveryBusProvider {
   private static final GuaranteedDeliveryOttoBus BUS =
-          new GuaranteedDeliveryBus(new Bus(ThreadEnforcer.NONE), GuaranteedDeliveryBus.Policy.GUARANTEE_ON_DEMAND);
+          new GuaranteedDeliveryBus(new Bus(ThreadEnforcer.ANY), GuaranteedDeliveryBus.Policy.GUARANTEE_ON_DEMAND);
 
   public static GuaranteedDeliveryOttoBus getInstance() {
     return BUS;
